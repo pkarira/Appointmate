@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 if (pass.equals(ud.getPassword())) {
                     Toast t = Toast.makeText(getApplicationContext(), "correct Password", Toast.LENGTH_SHORT);
                     t.show();
-                    Intent ic = new Intent(MainActivity.this, login1.class);
+                    Intent ic = new Intent(MainActivity.this, HospitalList.class);
                     startActivity(ic);
                 } else {
                     Toast t = Toast.makeText(getApplicationContext(), "Incorrect Password", Toast.LENGTH_SHORT);
@@ -52,6 +52,22 @@ public class MainActivity extends AppCompatActivity {
         dbh = new DataBaseHandler(this);
         prefs = getSharedPreferences("ABCDE", MODE_PRIVATE);
         user_num = prefs.getInt("UserNum", user_num);
+
+        HospitalDetails hd = new HospitalDetails(1,"Hospital ONE","#1234,ABC Road, LodaPur",1234567890,5);
+        dbh.addHospital(hd);
+        hd = new HospitalDetails(2,"Hospital Two","#1234,ABC Road, fsppur",2134567890,5);
+        dbh.addHospital(hd);
+
+        DoctorDetails dd = new DoctorDetails(1,"Dr. Saxena",123456789,"M.B.B.S.");
+        dbh.addDoctor(dd);
+        dd = new DoctorDetails(2,"Dr. Mehta",123451212,"M.B.B.S.");
+        dbh.addDoctor(dd);
+        dd = new DoctorDetails(3,"Dr. Sharma",123226789,"M.B.B.S.");
+        dbh.addDoctor(dd);
+        dd = new DoctorDetails(4,"Dr. Gupta",333456789,"M.B.B.S.");
+        dbh.addDoctor(dd);
+        dd = new DoctorDetails(5,"Dr. R. Babbar",333455789,"M.B.B.S.");
+        dbh.addDoctor(dd);
     }
 
     @Override

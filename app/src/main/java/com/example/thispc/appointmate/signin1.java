@@ -14,7 +14,7 @@ public class signin1 extends AppCompatActivity {
     EditText et1;
     EditText et2;
     EditText et3;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
