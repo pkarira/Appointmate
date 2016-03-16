@@ -58,15 +58,15 @@ public class MainActivity extends AppCompatActivity {
         hd = new HospitalDetails(2,"Hospital Two","#1234,ABC Road, fsppur",2134567890,5);
         dbh.addHospital(hd);
 
-        DoctorDetails dd = new DoctorDetails(1,"Dr. Saxena",123456789,"M.B.B.S.","type1");
+        DoctorDetails dd = new DoctorDetails(1,"Dr. Saxena",123456789,"M.B.B.S.","Dentist");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(2,"Dr. Mehta",123451212,"M.B.B.S.","type2");
+        dd = new DoctorDetails(2,"Dr. Mehta",123451212,"M.B.B.S.","Dermatologist");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(3,"Dr. Sharma",123226789,"M.B.B.S.","type3");
+        dd = new DoctorDetails(3,"Dr. Sharma",123226789,"M.B.B.S.","Cardiologist");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(4,"Dr. Gupta",333456789,"M.B.B.S.","type4");
+        dd = new DoctorDetails(4,"Dr. Gupta",333456789,"M.B.B.S.","Gynecologist");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(5,"Dr. R. Babbar",333455789,"M.B.B.S.","type5");
+        dd = new DoctorDetails(5,"Dr. R. Babbar",333455789,"M.B.B.S.","Neurologist");
         dbh.addDoctor(dd);
     }
 

@@ -22,9 +22,12 @@
 
         <ImageView
             android:id="@+id/img_c"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="#AAA"/>
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:background="#AAA"
+            android:src="@drawable/hospi"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
