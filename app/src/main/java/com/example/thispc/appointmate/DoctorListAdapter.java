@@ -41,6 +41,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Li
         holder.vType.setText(String.valueOf(dd.getType()));
         holder.vQual.setText(String.valueOf(dd.getQualification()));
         holder.vContact = dd.getContact();
+        holder.vDoctorID = dd.getId();
     }
 
     @Override
@@ -55,6 +56,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Li
         protected TextView vQual;
         protected ImageView vImg;
         protected Long vContact;
+        protected int vDoctorID;
 
         public ListViewHolder(View vi) {
             super(vi);
@@ -72,6 +74,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Li
             intent.putExtra("type",vType.getText());
             intent.putExtra("qual",vQual.getText());
             intent.putExtra("contact",vContact);
+            intent.putExtra("id",vDoctorID);
             parentAct.startActivity(intent);
         }
     }
