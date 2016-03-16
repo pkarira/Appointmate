@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     DataBaseHandler dbh;
     static int user_num = 1;
     SharedPreferences prefs;
+    final static String serverNumber = "+917060906315";
 
     public void login(View v) {
         Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
@@ -53,21 +54,22 @@ public class MainActivity extends AppCompatActivity {
         prefs = getSharedPreferences("ABCDE", MODE_PRIVATE);
         user_num = prefs.getInt("UserNum", user_num);
 
+        dbh.clear();
+
         HospitalDetails hd = new HospitalDetails(1,"Hospital ONE","#1234,ABC Road, LodaPur",1234567890,5);
         dbh.addHospital(hd);
         hd = new HospitalDetails(2,"Hospital Two","#1234,ABC Road, fsppur",2134567890,5);
         dbh.addHospital(hd);
 
-        DoctorDetails dd = new DoctorDetails(1,"Dr. Saxena",123456789,"M.B.B.S.","Dentist");
+        DoctorDetails dd = new DoctorDetails(1,"Dr. Saxena",Long.parseLong(serverNumber),"M.B.B.S.","Dentist");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(2,"Dr. Mehta",123451212,"M.B.B.S.","Dermatologist");
+        dd = new DoctorDetails(2,"Dr. Mehta",Long.parseLong(serverNumber),"M.B.B.S.","Dermatologist");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(3,"Dr. Sharma",123226789,"M.B.B.S.","Cardiologist");
+        dd = new DoctorDetails(3,"Dr. Sharma",Long.parseLong(serverNumber),"M.B.B.S.","Cardiologist");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(4,"Dr. Gupta",333456789,"M.B.B.S.","Gynecologist");
-        
+        dd = new DoctorDetails(4,"Dr. Gupta",Long.parseLong(serverNumber),"M.B.B.S.","Gynecologist");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(5,"Dr. R. Babbar",333455789,"M.B.B.S.","Neurologist");
+        dd = new DoctorDetails(5,"Dr. R. Babbar",Long.parseLong(serverNumber),"M.B.B.S.","Neurologist");
         dbh.addDoctor(dd);
     }
 

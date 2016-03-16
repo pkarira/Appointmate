@@ -57,6 +57,13 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public void clear(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM "+TABLE_HOSPITALS+";");
+        db.execSQL("DELETE FROM "+TABLE_DOCTORS+";");
+    }
+
+
     public void addUser(UserDetails ud) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();

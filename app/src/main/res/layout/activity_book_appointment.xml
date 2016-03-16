@@ -32,5 +32,13 @@
         android:text="Contact"
         android:layout_below="@+id/doctor_qual"
         android:id="@+id/doctor_contact"/>
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendMSG"
+        android:textSize="20dp"
+        android:background="@color/colorPrimary"
+        android:text="GET SCHEDULE"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>
