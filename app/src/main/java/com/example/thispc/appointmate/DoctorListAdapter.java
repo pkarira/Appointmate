@@ -1,6 +1,7 @@
 package com.example.thispc.appointmate;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,6 +40,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Li
         holder.vName.setText(dd.getName().toString());
         holder.vType.setText(String.valueOf(dd.getType()));
         holder.vQual.setText(String.valueOf(dd.getQualification()));
+        holder.vContact = dd.getContact();
     }
 
     @Override
@@ -52,6 +54,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Li
         protected TextView vType;
         protected TextView vQual;
         protected ImageView vImg;
+        protected Long vContact;
 
         public ListViewHolder(View vi) {
             super(vi);
@@ -64,7 +67,12 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Li
 
         @Override
         public void onClick(View v) {
-
+            Intent intent = new Intent(parentAct,BookAppointment.class);
+            intent.putExtra("name",vName.getText());
+            intent.putExtra("type",vType.getText());
+            intent.putExtra("qual",vQual.getText());
+            intent.putExtra("contact",vContact);
+            parentAct.startActivity(intent);
         }
     }
 
