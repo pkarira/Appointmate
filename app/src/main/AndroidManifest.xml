@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".HospitalList" />
         <activity android:name=".signin1" />
-        <activity android:name=".DoctorList"></activity>
+        <activity android:name=".DoctorList" />
+        <activity android:name=".BookAppointment"></activity>
     </application>
 
 </manifest>
