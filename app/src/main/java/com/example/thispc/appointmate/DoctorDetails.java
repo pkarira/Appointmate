@@ -8,12 +8,14 @@ public class DoctorDetails {
     private String name;
     private long contact;
     private String qualification;
+    private String type;
 
-    public DoctorDetails(int id, String name, long contact, String qualification) {
+    public DoctorDetails(int id, String name, long contact, String qualification, String type) {
         this.id = id;
         this.name = name;
         this.contact = contact;
         this.qualification = qualification;
+        this.type = type;
     }
 
     public int getId() {
@@ -46,5 +48,13 @@ public class DoctorDetails {
 
     public void setQualification(String qualification) {
         this.qualification = qualification;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

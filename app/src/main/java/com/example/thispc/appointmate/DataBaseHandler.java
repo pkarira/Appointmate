@@ -35,9 +35,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private static final String key_doctor_name = "name";
     private static final String key_doctor_contact = "contact";
     private static final String key_doctor_qual = "qualification";
+    private static final String key_doctor_type = "type";
 
     public DataBaseHandler(Context context) {
-
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -47,7 +47,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         db.execSQL(create_table_users);
         String create_table_hospitals = "CREATE TABLE " + TABLE_HOSPITALS + "(" + key_hospital_id + " INTEGER PRIMARY KEY," + key_hospital_name + " TEXT," + key_hospital_address + " TEXT," + key_hospital_contact + " INTEGER," + key_hospital_rating + " INTEGER)";
         db.execSQL(create_table_hospitals);
-        String create_table_doctors = "CREATE TABLE " + TABLE_DOCTORS + "(" + key_doctor_id + " INTEGER PRIMARY KEY," + key_doctor_name + " TEXT," + key_doctor_contact + " INTEGER," + key_doctor_qual + " TEXT)";
+        String create_table_doctors = "CREATE TABLE " + TABLE_DOCTORS + "(" + key_doctor_id + " INTEGER PRIMARY KEY," + key_doctor_name + " TEXT," + key_doctor_contact + " INTEGER," + key_doctor_qual + " TEXT," + key_doctor_type + " TEXT)";
         db.execSQL(create_table_doctors);
     }
 
@@ -135,6 +135,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         values.put(key_doctor_name, dd.getName());
         values.put(key_doctor_contact, dd.getContact());
         values.put(key_doctor_qual, dd.getQualification());
+        values.put(key_doctor_type, dd.getType());
 
         db.insert(TABLE_DOCTORS, null, values);
         db.close();
@@ -142,10 +143,10 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
     public DoctorDetails getDoctor(String doctorName) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_DOCTORS, new String[]{key_doctor_id, key_doctor_name, key_doctor_contact, key_doctor_qual}, key_doctor_name + "=?", new String[]{doctorName}, null, null, null, null);
+        Cursor cursor = db.query(TABLE_DOCTORS, new String[]{key_doctor_id, key_doctor_name, key_doctor_contact, key_doctor_qual, key_doctor_type}, key_doctor_name + "=?", new String[]{doctorName}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
-        DoctorDetails dd = new DoctorDetails(Integer.parseInt(cursor.getString(0)), cursor.getString(1), Long.parseLong(cursor.getString(2)), cursor.getString(3));
+        DoctorDetails dd = new DoctorDetails(Integer.parseInt(cursor.getString(0)), cursor.getString(1), Long.parseLong(cursor.getString(2)), cursor.getString(3), cursor.getString(4));
         return dd;
     }
 
@@ -156,7 +157,20 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             do {
-                DoctorDetails dd = new DoctorDetails(Integer.parseInt(cursor.getString(0)), cursor.getString(1), Long.parseLong(cursor.getString(2)), cursor.getString(3));
+                DoctorDetails dd = new DoctorDetails(Integer.parseInt(cursor.getString(0)), cursor.getString(1), Long.parseLong(cursor.getString(2)), cursor.getString(3), cursor.getString(4));
+                doctorList.add(dd);
+            } while (cursor.moveToNext());
+        }
+        return doctorList;
+    }
+
+    public List<DoctorDetails> getAllDoctors(String type){
+        List<DoctorDetails> doctorList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_DOCTORS, new String[]{key_doctor_id, key_doctor_name, key_doctor_contact, key_doctor_qual, key_doctor_type}, key_doctor_type + "=?", new String[]{type}, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                DoctorDetails dd = new DoctorDetails(Integer.parseInt(cursor.getString(0)), cursor.getString(1), Long.parseLong(cursor.getString(2)), cursor.getString(3), cursor.getString(4));
                 doctorList.add(dd);
             } while (cursor.moveToNext());
         }

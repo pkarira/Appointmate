@@ -28,9 +28,9 @@ public class signin1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String username = et1.getText().toString();
-                    String pass = et2.getText().toString();
-                    String name = et3.getText().toString();
+                    String username = et2.getText().toString();
+                    String pass = et3.getText().toString();
+                    String name = et1.getText().toString();
                     UserDetails ud = new UserDetails(MainActivity.user_num, name, username, pass);
                     dbh.addUser(ud);
                     MainActivity.user_num++;

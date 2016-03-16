@@ -28,7 +28,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Li
     public DoctorListAdapter.ListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.
                 from(parent.getContext()).
-                inflate(R.layout.hospital_card_layout, parent, false);
+                inflate(R.layout.doctor_detail_card, parent, false);
 
         return new ListViewHolder(itemView);
     }
@@ -37,7 +37,7 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Li
     public void onBindViewHolder(DoctorListAdapter.ListViewHolder holder, int position) {
         DoctorDetails dd = doctorList.get(position);
         holder.vName.setText(dd.getName().toString());
-        holder.vContact.setText(String.valueOf(dd.getContact()));
+        holder.vType.setText(String.valueOf(dd.getType()));
         holder.vQual.setText(String.valueOf(dd.getQualification()));
     }
 
@@ -49,14 +49,14 @@ public class DoctorListAdapter extends RecyclerView.Adapter<DoctorListAdapter.Li
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         protected TextView vName;
-        protected TextView vContact;
+        protected TextView vType;
         protected TextView vQual;
         protected ImageView vImg;
 
         public ListViewHolder(View vi) {
             super(vi);
             vName = (TextView) vi.findViewById(R.id.txt_name_c_doc);
-            vContact = (TextView) vi.findViewById(R.id.txt_contact_doc);
+            vType = (TextView) vi.findViewById(R.id.txt_type_doc);
             vQual = (TextView) vi.findViewById(R.id.txt_qual_doc);
             vImg = (ImageView) vi.findViewById(R.id.img_c_doc);
             vi.setOnClickListener(this);
