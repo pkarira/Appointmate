@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         dbh.clear();
 
-        HospitalDetails hd = new HospitalDetails(1,"Hospital ONE","#1234,ABC Road, LodaPur",1234567890,5);
+        HospitalDetails hd = new HospitalDetails(1,"Hospital ONE","#1234,ABC Road, LodaPur",1234567890,3);
         dbh.addHospital(hd);
         hd = new HospitalDetails(2,"Hospital Two","#1234,ABC Road, fsppur",2134567890,5);
         dbh.addHospital(hd);
