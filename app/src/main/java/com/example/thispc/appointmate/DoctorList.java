@@ -37,12 +37,12 @@ public class DoctorList extends AppCompatActivity implements Spinner.OnItemSelec
         type_spinner.setOnItemSelectedListener(this);
 
         List<String> types = new ArrayList<>();
-        types.add("all");
-        types.add("Dentist");
-        types.add("Dermatologist");
-        types.add("Cardiologist");
-        types.add("Gynecologist");
-        types.add("Neurologist");
+        types.add("All/सब");
+        types.add("Dentist/दंत चिकित्सक");
+        types.add("Dermatologist/त्वचा विशेषज्ञ");
+        types.add("Cardiologist/हृदय रोग विशेषजञ");
+        types.add("Gynecologist/प्रसूतिशास्री");
+        types.add("Neurologist/न्यूरोलॉजिस्");
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,types);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

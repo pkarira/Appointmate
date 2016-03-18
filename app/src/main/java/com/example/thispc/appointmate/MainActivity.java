@@ -69,15 +69,15 @@ public class MainActivity extends AppCompatActivity {
         hd = new HospitalDetails(2, "Hospital Two", "#1234,ABC Road, Roorkee", 2134567890, 5);
         dbh.addHospital(hd);
 
-        DoctorDetails dd = new DoctorDetails(1, "Dr. Saxena", Long.parseLong(serverNumber), "M.B.B.S.", "Dentist");
+        DoctorDetails dd = new DoctorDetails(1, "Dr. Saxena", Long.parseLong(serverNumber), "M.B.B.S.", "Dentist/दंत चिकित्सक");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(2, "Dr. Mehta", Long.parseLong(serverNumber), "M.B.B.S.", "Dermatologist");
+        dd = new DoctorDetails(2, "Dr. Mehta", Long.parseLong(serverNumber), "M.B.B.S.", "Dermatologist/त्वचा विशेषज्ञ");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(3, "Dr. Sharma", Long.parseLong(serverNumber), "M.B.B.S.", "Cardiologist");
+        dd = new DoctorDetails(3, "Dr. Sharma", Long.parseLong(serverNumber), "M.B.B.S.", "Cardiologist/हृदय रोग विशेषजञ");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(4, "Dr. Gupta", Long.parseLong(serverNumber), "M.B.B.S.", "Gynecologist");
+        dd = new DoctorDetails(4, "Dr. Gupta", Long.parseLong(serverNumber), "M.B.B.S.", "Gynecologist/प्रसूतिशास्री");
         dbh.addDoctor(dd);
-        dd = new DoctorDetails(5, "Dr. R. Babbar", Long.parseLong(serverNumber), "M.B.B.S.", "Neurologist");
+        dd = new DoctorDetails(5, "Dr. R. Babbar", Long.parseLong(serverNumber), "M.B.B.S.", "Neurologist/न्यूरोलॉजिस्");
         dbh.addDoctor(dd);
     }
 

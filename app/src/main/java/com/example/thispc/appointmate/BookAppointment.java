@@ -89,7 +89,7 @@ public class BookAppointment extends AppCompatActivity {
                         smsManager.sendTextMessage(phoneNumber, null, smsBody, null, null);
                     }
                 }).start();
-                btn.setText("Refresh List");
+                btn.setText("Refresh List/सूची ताज़ा करे");
             }
         });
         btn1.setOnClickListener(new View.OnClickListener() {

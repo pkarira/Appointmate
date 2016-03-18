@@ -20,7 +20,7 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
+            android:hint="Name/नाम"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/editText2" />
 
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:hint="Password"
+            android:hint="Password/पासवर्ड"
             android:inputType="textPassword" />
 
     </android.support.design.widget.TextInputLayout>
@@ -52,7 +52,7 @@
         android:layout_marginTop="50dp"
         android:background="@color/colorPrimary"
         android:onClick="login"
-        android:text="Log In"
+        android:text="Log In/लॉगिन"
         android:textColor="#ffffff"
         android:textStyle="bold" />
 
@@ -65,7 +65,7 @@
         android:layout_marginTop="54dp"
         android:background="@color/colorPrimary"
         android:onClick="signin"
-        android:text="Sign In"
+        android:text="Register/रजिस्टर"
         android:textColor="#ffffff"
         android:textStyle="bold" />
 
