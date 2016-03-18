@@ -9,29 +9,88 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.thispc.appointmate.BookAppointment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:id="@+id/doctor_name"/>
-    <TextView
+        android:orientation="horizontal"
+        android:id="@+id/ll1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_weight="1"
+            android:id="@+id/doctor_name"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:layout_weight="1"
+            android:id="@+id/doctor_type"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Type"
-        android:layout_below="@+id/doctor_name"
-        android:id="@+id/doctor_type"/>
-    <TextView
+        android:orientation="horizontal"
+        android:layout_below="@+id/ll1"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll2">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Qualification"
+            android:layout_weight="1"
+            android:id="@+id/doctor_qual"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Contact"
+            android:layout_weight="1"
+            android:id="@+id/doctor_contact"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Qualification"
-        android:layout_below="@+id/doctor_type"
-        android:id="@+id/doctor_qual"/>
-    <TextView
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/ll2"
+        android:id="@+id/ll3">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/today"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/tomorrow"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/dayAfterTmrw"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contact"
-        android:layout_below="@+id/doctor_qual"
-        android:id="@+id/doctor_contact"/>
+        android:id="@+id/slotList"
+        android:layout_below="@+id/ll3">
+    </ListView>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

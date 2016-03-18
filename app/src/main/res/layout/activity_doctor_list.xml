@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     tools:context="com.example.thispc.appointmate.DoctorList">
 
     <TextView
@@ -14,18 +15,32 @@
         android:text="NAME"
         android:textSize="27dp" />
 
-    <Spinner
-        android:id="@+id/type_spinner"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/hospital_name"
-        android:layout_marginTop="15dp"></Spinner>
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll1d">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="Filter : "
+            android:textSize="20dp"/>
+        <Spinner
+            android:id="@+id/type_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginTop="5dp"></Spinner>
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/doctorlist_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/type_spinner"
+        android:layout_below="@+id/ll1d"
         android:layout_marginTop="15dp"
         android:overScrollMode="always"
         android:padding="5dp"></android.support.v7.widget.RecyclerView>

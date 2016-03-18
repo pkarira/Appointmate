@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -32,14 +33,27 @@ public class SmsManager extends BroadcastReceiver {
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String receiveTime = format.format(date);
                 if (msg.getOriginatingAddress().equals(MainActivity.serverNumber)) {
-                    Toast.makeText(context,"Recieved From Correct Mobile", Toast.LENGTH_SHORT).show();
                     recievedMSG = msg.getDisplayMessageBody();
+                    Toast.makeText(context,recievedMSG, Toast.LENGTH_SHORT).show();
                     BookAppointment.parent.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            BookAppointment.progress.dismiss();
+                            if (recievedMSG.contains("Booking")) {
+                                BookAppointment.progress2.dismiss();
+                                BookAppointment.cnt1=0;
+                                BookAppointment.cnt2=0;
+                                BookAppointment.cnt3=0;
+                            } else {
+                                if(BookAppointment.progress!=null)
+                                    BookAppointment.progress.dismiss();
+                                BookAppointment.updateSlotStrings();
+                                BookAppointment.btn1.setVisibility(View.VISIBLE);
+                                BookAppointment.btn2.setVisibility(View.VISIBLE);
+                                BookAppointment.btn3.setVisibility(View.VISIBLE);
+                            }
                         }
                     });
+
                 }
             }
         }
