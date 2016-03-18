@@ -39,7 +39,37 @@ public class HospitalListAdapter extends RecyclerView.Adapter<HospitalListAdapte
         HospitalDetails hd = hospitalList.get(position);
         holder.vName.setText(hd.getName().toString());
         holder.vContact.setText(String.valueOf(hd.getContact()));
-        holder.vRating.setText(String.valueOf(hd.getRating()));
+       String s=String.valueOf(hd.getRating());
+        if(s.equals("1"))
+        {
+            holder.vImg1.setImageResource(R.drawable.star);
+        }
+        if(s.equals("2"))
+        {
+            holder.vImg1.setImageResource(R.drawable.star);
+            holder.vImg2.setImageResource(R.drawable.star);
+        }
+        if(s.equals("3"))
+        {
+            holder.vImg1.setImageResource(R.drawable.star);
+            holder.vImg2.setImageResource(R.drawable.star);
+            holder.vImg3.setImageResource(R.drawable.star);
+        }
+        if(s.equals("4"))
+        {
+            holder.vImg1.setImageResource(R.drawable.star);
+            holder.vImg2.setImageResource(R.drawable.star);
+            holder.vImg3.setImageResource(R.drawable.star);
+            holder.vImg4.setImageResource(R.drawable.star);
+        }
+        if(s.equals("5"))
+        {
+            holder.vImg1.setImageResource(R.drawable.star);
+            holder.vImg2.setImageResource(R.drawable.star);
+            holder.vImg3.setImageResource(R.drawable.star);
+            holder.vImg4.setImageResource(R.drawable.star);
+            holder.vImg5.setImageResource(R.drawable.star);
+        }
     }
 
     @Override
@@ -53,13 +83,24 @@ public class HospitalListAdapter extends RecyclerView.Adapter<HospitalListAdapte
         protected TextView vContact;
         protected TextView vRating;
         protected ImageView vImg;
+        protected ImageView vImg1;
+        protected ImageView vImg2;
+        protected ImageView vImg3;
+        protected ImageView vImg4;
+        protected ImageView vImg5;
 
         public ListViewHolder(View vi) {
             super(vi);
             vName = (TextView) vi.findViewById(R.id.txt_name_c);
             vContact = (TextView) vi.findViewById(R.id.txt_contact);
-            vRating = (TextView) vi.findViewById(R.id.txt_rating);
+
             vImg = (ImageView) vi.findViewById(R.id.img_c);
+            vImg1 = (ImageView) vi.findViewById(R.id.image1);
+            vImg2 = (ImageView) vi.findViewById(R.id.image2);
+            vImg3 = (ImageView) vi.findViewById(R.id.image3);
+            vImg4 = (ImageView) vi.findViewById(R.id.image4);
+            vImg5 = (ImageView) vi.findViewById(R.id.image5);
+
             vi.setOnClickListener(this);
         }
 
