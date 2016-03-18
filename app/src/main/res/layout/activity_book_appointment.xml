@@ -97,7 +97,7 @@
         android:id="@+id/sendMSG"
         android:textSize="20dp"
         android:background="@color/colorPrimary"
-        android:text="SCHEDULE/अनुसूची"
+        android:text="GET SCHEDULE/अनुसूची"
         android:textColor="#FFFFFF"
         android:layout_alignParentBottom="true" />
 </RelativeLayout>
