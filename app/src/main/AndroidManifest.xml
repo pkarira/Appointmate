@@ -16,13 +16,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".HospitalList" />
         <activity android:name=".signin1" />
         <activity android:name=".DoctorList" />
-        <activity android:name=".BookAppointment"></activity>
+        <activity android:name=".BookAppointment" />
 
         <receiver android:name=".SmsManager">
             <intent-filter android:priority="999">
@@ -30,6 +30,12 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
