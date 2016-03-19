@@ -18,6 +18,8 @@ import java.util.List;
 
 public class BookAppointment extends AppCompatActivity {
 
+    /* Variables*/
+
     TextView name, type, qual, contact;
     static long bookingNumber;
     static int doctorId;
@@ -128,7 +130,7 @@ public class BookAppointment extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 if (buttonSelected == 1) {
                     progress2 = ProgressDialog.show(BookAppointment.this, "Please Wait",
-                            "Waiting for Booking Confirmation", true);
+                            "Waiting for Server Message", true);
 
                     new Thread(new Runnable() {
                         @Override
@@ -143,7 +145,7 @@ public class BookAppointment extends AppCompatActivity {
                     }).start();
                 } else if (buttonSelected == 2) {
                     progress2 = ProgressDialog.show(BookAppointment.this, "Please Wait",
-                            "Waiting for Booking Confirmation", true);
+                            "Waiting for Server Message", true);
 
                     new Thread(new Runnable() {
                         @Override
@@ -188,9 +190,6 @@ public class BookAppointment extends AppCompatActivity {
     }
 
     public static void updateSlotStrings() {
-        slotsInfo1.clear();
-        slotsInfo2.clear();
-        slotsInfo3.clear();
         for (int i = 0; i < 24; i++) {
             if (com.example.thispc.appointmate.SmsManager.recievedMSG.charAt(i) == '0') {
                 slotsInfo1.add(((i < 10) ? ("0" + i) : i) + "00hrs to " + (((i + 1) < 10) ? ("0" + (i + 1)) : (i + 1)) + "00hrs");
