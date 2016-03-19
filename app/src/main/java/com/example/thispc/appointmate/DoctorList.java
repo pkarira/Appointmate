@@ -20,7 +20,7 @@ public class DoctorList extends AppCompatActivity implements Spinner.OnItemSelec
     String hospital_name;
     TextView hName;
     Spinner type_spinner;
-    String typeSelected = "all";
+    String typeSelected = "All/सब";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +51,7 @@ public class DoctorList extends AppCompatActivity implements Spinner.OnItemSelec
 
     private List<DoctorDetails> createList() {
         List<DoctorDetails> result;
-        result=(typeSelected.equals("all"))?dbh.getAllDoctors():dbh.getAllDoctors(typeSelected);
+        result=(typeSelected.equals("All/सब"))?dbh.getAllDoctors():dbh.getAllDoctors(typeSelected);
         return result;
     }
     public void addToList(){

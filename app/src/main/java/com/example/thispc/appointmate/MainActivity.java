@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     DataBaseHandler dbh;
     static int user_num = 1;
     SharedPreferences prefs;
-    final static String serverNumber = "+917248187747";
+    final static String serverNumber = "+917060906315";
     static String today, tmrw, dayAftertmrw;
 
     public void login(View v) {

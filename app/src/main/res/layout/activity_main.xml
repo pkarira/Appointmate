@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.thispc.appointmate.MainActivity">
+    tools:context="com.example.thispc.appointmate.MainActivity"
+    android:background="#FFF3E0">
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"

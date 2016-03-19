@@ -24,7 +24,6 @@ public class SmsManager extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Bundle bundle = intent.getExtras();
         SmsMessage msg = null;
-        Toast.makeText(context,"Recieved", Toast.LENGTH_SHORT).show();
         if (null != bundle) {
             Object[] smsObj = (Object[]) bundle.get("pdus");
             for (Object object : smsObj) {
@@ -34,15 +33,16 @@ public class SmsManager extends BroadcastReceiver {
                 String receiveTime = format.format(date);
                 if (msg.getOriginatingAddress().equals(MainActivity.serverNumber)) {
                     recievedMSG = msg.getDisplayMessageBody();
-                    Toast.makeText(context,recievedMSG, Toast.LENGTH_SHORT).show();
                     BookAppointment.parent.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             if (recievedMSG.contains("Booking")) {
                                 BookAppointment.progress2.dismiss();
+                                Toast.makeText(BookAppointment.parent, "Booking Confirmed / बुकिंग संपुष्", Toast.LENGTH_SHORT).show();
                                 BookAppointment.cnt1=0;
                                 BookAppointment.cnt2=0;
                                 BookAppointment.cnt3=0;
+                                BookAppointment.parent.finish();
                             } else {
                                 if(BookAppointment.progress!=null)
                                     BookAppointment.progress.dismiss();
