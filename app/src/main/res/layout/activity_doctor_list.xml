@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
-    tools:context="com.example.thispc.appointmate.DoctorList">
+    tools:context="com.example.thispc.appointmate.DoctorList"
+    android:background="#FFF3E0">
 
     <TextView
         android:id="@+id/hospital_name"
@@ -13,7 +14,8 @@
         android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="NAME"
-        android:textSize="27dp" />
+        android:textSize="27dp"
+        android:textColor="#F25114"/>
 
     <LinearLayout
         android:layout_width="match_parent"
